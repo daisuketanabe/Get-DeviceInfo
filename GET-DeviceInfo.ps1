@@ -14,6 +14,7 @@ $Storage = (Get-Volume | Measure-Object -Sum -Property Size).Sum / (1024*1024*10
 $Storage = [int]$Storage
 
 $DeviceInfo = @{
+    COMPUTERNAME = $ENV:ComputerName 
     CPU = $CPUs[0].Name
     MEMORY = "$MEMORY"+"GB"
     Storage = "$Storage"+"GB"
